@@ -1,6 +1,6 @@
 <?php
-use App\Http\Controllers\Api\EkitaldiController;
-use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\EkitaldiController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
