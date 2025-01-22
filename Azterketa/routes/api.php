@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/register', [UserController::class, 'register']);
-
-
 Route::middleware('auth:sanctum')->group(function() {
 
     Route::apiResource('ekitaldiak', EkitaldiController::class);
@@ -15,4 +13,5 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::middleware('role:admin')->get('/dentistak', [UserController::class, 'getAllDentists']);  
     Route::get('/partehartzaileak/{id}', [EkitaldiController::class, 'getPartehartzaileak']); 
     Route::get('/ekitaldiak/{id}', [EkitaldiController::class, 'getEkitaldiakForDentista']);  
+
 });

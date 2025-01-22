@@ -11,11 +11,6 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable, HasRoles; 
 
-    /**
-     *
-     *
-     * @var list<string>
-     */
     protected $fillable = [
         'name',
         'email',
@@ -27,17 +22,12 @@ class User extends Authenticatable
     ];
 
 
-    
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Los atributos que deben ser convertidos.
-     *
-     * @return array<string, string>
-     */
+    
     protected function casts(): array
     {
         return [
