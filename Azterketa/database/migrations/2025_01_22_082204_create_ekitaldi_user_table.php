@@ -13,15 +13,13 @@ return new class extends Migration
     {
         Schema::create('ekitaldi_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // Relación con la tabla 'users'
-            $table->foreignId('ekitaldi_id')->constrained('ekitaldiak')->onDelete('cascade'); // Relación con la tabla 'ekitaldiak'
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); 
+            $table->foreignId('ekitaldi_id')->constrained('ekitaldiak')->onDelete('cascade'); 
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
         Schema::dropIfExists('ekitaldi_user');
