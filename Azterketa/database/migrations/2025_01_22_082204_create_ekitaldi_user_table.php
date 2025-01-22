@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('ekitaldi_user', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // Relación con la tabla 'users'
+            $table->foreignId('ekitaldi_id')->constrained('ekitaldiak')->onDelete('cascade'); // Relación con la tabla 'ekitaldiak'
             $table->timestamps();
         });
     }
